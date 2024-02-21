@@ -1,0 +1,48 @@
+##Ethernet
+IEEE 802.3
+To prevent collisions, CSMA/CD is used (Carrier -sesne with mutiple access/ collision detection)
+CSMA/CA (collision avoidance) used fro wireless
+
+	Hubs: single collision domain --- single point of failure, one port has access to all others
+	switch: multiple collision domain --- ports don't have access to eachother
+	2 layers: logical link control: IP adress
+		media access control: physical system identification
+	hub vs switch: switch is faster by at least tenfold
+		hubs work at layer 1 switches work at layer 2
+	Router: layer 3 switch
+
+## security
+	-sniffer analyes protocols
+	-have more expensive and powerful hardware versions
+
+
+##Cables: the T in BASET is twisted pair: all twisted pair cable have maximum length of 100 meters or 328 feet
+CAt 3 = 16mbps
+CAT 4 = 20
+CAT 5 = 100
+Cat 5E = 1000 
+CAT 6 = 10000 (10G)
+CAT7 = 28gbps
+CAT 8 = 40 GBPS
+E = enhanced
+
+568A to 568A or 568b to 568b is a patch cable/ straight through cable: used for connecting non-similar devices: Pc to switch or hub
+568A to 568B is a crossover cable: connects simlar devices: hub to hub, switch to switch pc to pc
+
+
+
+Multimode fiber: plastic instead of glass, led instead of laser: more durable and cheaper but less efficient
+single mode fiber: glass and laser: expensive and fragile but more expensive
+layer 2 < data link < MAC address < switch/bridge
+
+Bridge: similar to switch is like an address book for networking
+
+Auto sensing: when a switch can automatically figure the speed of connections and change accordingly
+
+STP: spanning tree protocol prevents loopoing of data
+
+100BASET aka fast ethernet aka standard ethernet
+
+SONET: synchronous optical network download speed is the same as upload speed maxes out at 250 GBPS
+
+1000BASET modern ethernet

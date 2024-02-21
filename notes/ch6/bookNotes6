@@ -1,0 +1,22 @@
+##Subnetting 
+	Classful subnetting only use /8 /16 /24
+
+
+##DHCP
+	-DHCP works on a four way handshake:
+		1.Discover: Client send out a message to discover dhcp server
+		2.Offer: TheDHCP sends back an offer with an IP/ subnet mask? default gateway
+		3.Request: Client accepts the DHCP configs
+		4. ACK: DHCP acknowledges that the client has requested anc stores the mac address
+	The DHCP lease lasts for 1 - 8 days
+	#DCHP uses UDP, The server uses UDP Port 67 and client uses port 68
+	DHCP clients are as easy to setup as a click of a button
+	DHCP servers require more work as they need more info: IP address pool, the subnet mask of the network and ip of default gateway
+	Scope: DHCP rang or pool of ip addresses
+	-routers usually contain DHCP servers, so if the default gateway is blank it is because the router is the gaateway so the address is itself
+	DHCP Relay: On complex networks the DHCP server needs to be outside of a lan
+	#Routers block broadcast addresses so they don't muck up Wans
+	Routers that have relay can forward DORA handshakes they use UDP forwarding. For  router rto be relay capable they need the ip pf the DHCP server (th ip helper or udp helper address)
+	#Reservation: Certain devices should not use DHCP so they can be easily found on a network: switches, routers, servers, printers,wifi clients etc. Bc of this reservation is used to make sure a block of ips stays open for their use.
+		-IP exclusion range: When a tech takes a block of IPS away from the DHCP server
+		-MAC reservation: Every host gets the same ip address every time so naturally certain ips are not used

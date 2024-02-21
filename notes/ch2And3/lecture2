@@ -1,0 +1,74 @@
+	TOPOLOGY
+Databus easy to setup, difficult to trouble shoot,
+	single point of failure. 
+
+Modulation, each piece of a network can work independant of another
+
+
+star topology
+
+These use hubs
+No single point of failure
+	except hub
+Low cost
+limited on number of computers # of ports
+
+Star-Bus (hybrid)
+Could be a star network connected to other networks using a bus and so on
+most used
+
+Token ring
+
+Only the machine who has the token can transmit data, token passes
+no collision and heavy payload (package)
+Highly reliable, very low failures
+They used this for metro area networks
+cost was high
+used by IBM
+AS400 tokem ring solution
+
+Mesh
+
+redundancy
+
+Cables
+Coaxial
+	Copper, low resistance
+	10Base2
+	10Base5
+	10 = speed of transmition
+	base = broadband
+	2 = meters (185) meters
+	5 = meters (400) meters
+	10Base2 uses bnc connectors
+	-t connector
+		-conneccts pc while extending distance
+		-looks like a t
+	-barrell connecter
+		-connect two pcs together
+		-looks like a barrell
+	-10Base5 connectors use AUI connector
+		serial ports 
+		parallell ports
+	-10BaseT
+		-twist pair
+	-100BaseT
+	-1000BaseT
+
+UTP - unshielded twisted pair
+	rj11 - 4 wires, DSL
+	rJ-45 - 8 wires, cable modem
+	Crosstalk causes singals to mix so RJ -45 uses UTP to reduce
+STP - protects from emi. 
+	10BaseFX - fiber optics -10 speed base boadband, f = fiber x = not finalized
+	able to travel long ditance bute expensive and fragile
+	LEDs
+	- purified plastic, more durable, lower cost but lower transmission rate
+
+UTP/STP
+fiber optic
+	-sc
+	-st
+	-
+
+

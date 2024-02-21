@@ -1,0 +1,2 @@
+Since routers don't deal with MAC addresses do they only keep network IDs in their routing tables and not individual IPS
+

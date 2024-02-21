@@ -1,0 +1,30 @@
+## TCP/IP  protocol suite:
+	##Network layer
+	Internet protocol: works at the network layer. Takes the payload ans adds the ip packet then sends to the datalink layer
+	--IPv4 and IPv6 are both protocols on the network layer
+	**ICMP(internet control message protocol) is also a protocol on the network layer --ping uses this
+	-A few parts of the packet -Version: 4 or 6 -total length: size in octets, 65kb is the max -time to live: number that decrements by 1 every hop to limit packets from infinitley looping -protocol: usually tcp or udp
+
+	##Transport layer
+		##TCP
+	- 3 way handshake is syn, syn-ack, ack
+	- data get segmented
+	- simplified header: source ports, destination port, sequence number ,ak number: used to keep track of segmented parts
+	flags: or tcp flags, give both sides detailed info about state of connection
+	checksum: tcps error checking formula
+
+		##UDP
+	- faster when compared to TCP
+	- Dynamic host control protocol and domain name system use UDP
+	- UDP header: Source port, destination port, length and checksum
+	-UDP has checksum like tcp but no seq and ak numbers
+	-Does not get chopped up like tcp
+
+	##Application
+		##Uses various protocols to send data between client and server. An example is http
+
+
+	##Ip addresses in networks: Host Id: denoted by an x in an ip address ex: 202.120.10.x it specifies an actual machine
+	Default gateway: for data to be routed outside of LANs it needs a router which is called the default gateway
+	Routing table: what the router uses to direct addresses
+

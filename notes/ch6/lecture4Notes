@@ -1,0 +1,9 @@
+-Use nslookup to see DNS info
+
+##Classes
+	-Class A: 1-126 --255.0.0.0
+	-Class B: 128-191 --255.255.0.0
+	-Class C: 192-223 --255.255.255.0
+
+127.0.0.1: loopback address that you can ping
+

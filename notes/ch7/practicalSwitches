@@ -1,0 +1,9 @@
+##Setting up routers:
+
+	Routers usually are configured by pluggin a rollover yost cable into a laptop
+
+	## Terminal emulation:
+		PuTTY and hyperlink are both common emulation programs used to work with a router
+		Cisco product use IOS: Ciscos proprietary operating system
+		NMS (Network Management Software): A collection of software, usually culminating in a web page that allows you to monitor you network:
+			OEM (origninal equipment manufacturers) Are powerful and easy to use as they have the support of the company that makes the equipment. But they only work with a companies individual equipment

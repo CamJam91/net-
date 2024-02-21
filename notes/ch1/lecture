@@ -1,0 +1,37 @@
+Protocol = method, process, procedures
+Abstract models
+Open system interchange, OSI model
+
+Physical
+	repeater, hub
+
+datalink
+	switch, bride, nic
+
+network
+	routers, default gateway: ingress, egress
+	modem
+
+transport
+	protocols: tcp, udp, snmp, igmp, 
+
+session
+	transmission preperation
+	remote procedure call
+
+presentation
+	compression
+
+application
+	programs, databases, things people use
+
+
+TCP
+
+Application
+
+transport
+
+internet
+
+access

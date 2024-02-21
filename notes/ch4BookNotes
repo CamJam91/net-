@@ -1,0 +1,30 @@
+## Ethernet standards
+
+	##100 megabit ethernet
+100BASE-t //coloquially called fast ethernet, 100 meter distance, cat5 or better utp or stp cabling
+
+Baseband - only one signal can occupy the wire at a time (the lowest) 
+
+100BASE-FX //Fiber optic cabling. runs at 100 megabit, baseband, 2 km distance
+Advantages over UTP: more secure, resistant to emi, and longer range
+
+100BASE-SX: short distance led cables, alternative to fiber cables **depricated*
+
+ **100Base tech is outdated and will only be worked on in the field for legacy tech
+
+DUPLEX: half-duplex routers could only sned or recieve data at one time not both full duplex does both. All routers today are full duplaex. 
+
+	##gigabit ethernet
+	Thats 1K BASE
+1000BASE-T
+These cables have the same distance as 100BASE (100 meters) and use the same cable connectors
+	-1000BASE-SX: multimode that transfers led light on a fiber cable, uses LC connectors
+
+1000BASE-LX Long distance (5KM)
+
+Fiber connectors: SFF (small form factor): a type of SFF call MT-RJ is used by cisco. 
+Local connectors (LC) very popular in the US
+
+
+##Connectors
+GBIC: Standard for modular ethernet plugs. They have a transceiver that can swap types today SFP is used.

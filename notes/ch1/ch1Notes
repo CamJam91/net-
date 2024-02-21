@@ -1,0 +1,43 @@
+UTP: unshielded twisted pair. Four pairs of wires that transmit data
+
+Physical layer: layer 1 Any physical medium that is used to transmit data: hubs, cables, routers, etc.
+
+NIC: Mac address: device ID: the last 6 digits are unique to the individual card while the first 6 are unique to a manufacturer. The OUIL organizaionally unique identifier is the first 6 digits. 
+
+MAC-48 or EUI-48: The numbering space for which the mac adress is derived. 
+
+Frame: container for a chunk of data
+
+PDU: protocol data unit. When talking about different data units in the osi model they fall under the catagory of PDU. So a frame is a pdu and so is a byte, etc. 
+
+Sections of a frame: There are 3 broad catagories of a frame. The header: The 3 mac adresses, The payload: the actual data and The Trailer: the fram check sequence
+
+FCS: The frame check sequence is sent by a MAC and checked by the reciever. It uses CRC technology or cyclic redundancy check to insure the data has arrived intact. 
+
+The Hub: The predecessor to the switch. It was a dumb device that had multiple ports. When it recieved frames from one port it sent it through every other one. Machines then dropped it unless it was adressed to their MAC
+
+The Switch: can filter frames by mac adress. 
+
+Broadcast address: This is how a system gets a mac adress. It send out a F frame (all Fs for the 6 sections) and every ip that recieves it will send back their MAC
+
+unicast frame: When a frame is adressed specifiaclly to a single MAC
+
+Layer 2: The datalink layer: Anything that deals with Mac adresses is the datalink. The NIC is therefore datalink. 
+
+LLC: logical link control: The part of the nic that talks to an operating system . Handles multiple protocols. 
+
+Layer 3: The network layer (packets)
+This layer uses packets and the TCP/IP to work with data between different networks. 
+
+IP packet conatins both i[ adresses and the data. The packet gets put into a frame by the nic.
+Each time the packet hits a router, the IP packet is stripped, the destination MAC is figured and the packet is wrapped in a new frame. 
+
+Layer 4: Transport: This layer ensure that all packets arrive to their destination and are able to be put in correct order. The sending machine segments the data being transmitted into however many packets and the reciveing machine reassembles them. These packets are embedded with a sequence number. 
+
+layer 5: session layer
+This layer handles opening, operating and closing of sessions, which are connections betweens machine ports and other machines.
+Netstat and ss views your sessions
+
+layer 6: Presentation: converts data between the application layer and lower layers.
+
+

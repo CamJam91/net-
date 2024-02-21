@@ -1,0 +1,32 @@
+#Routing protocolcs do several things. 
+		Determine routes that traffic will take. This takes into account the state of a link or how far away a link is. 
+		
+	##Interior Gateway Routing Protocol: Protocols that work withing an AS
+		**AS: Autononous system: a large newtork that is ran by a single organization. These are the backbone of the interent
+		PROTOCOLS: RIPv1, RIPv2, OSF, EIGRP, IS-IS
+
+
+		##Distance vector routing
+		The route with the shortest amount of hops is the vector that will be used. 	Pros: good for small networks, easy to configure
+	cons: doesn't scale well. The rout with more hops might be faster but DV protocols will still choose the shortest. Sends out routing tables in set intervals
+	# Distance vector protocols:
+
+	RIPv1: The first distance vector protocol. It has a maximum hop count of 15 and would clog up routes with rout table pulses. Bad for security and couldnt use VLSM
+		**VLSM: variable length subnet masking. When a router can work with networks that use different subnets
+
+	RIPv2: The update to RIP, More secure, and has VLSM capability. Great for small networks and many home routers have this built in
+	EIGRP: Came out before the OSPF, Ciscos proprietary distance vector that is supposed to be an upgrade from RIP. 
+
+	# Link-state:
+	Link-state protocols consider the speed of the routes when taking into account the best routs to follow, this is what most large networks use. 
+
+	OSPF: Open shortest path first
+		This is the most commonly used IGP in the world. AS's use this internally because they were made for them. It has faster convergence than RIP. Routers that use OSF exchange information through LSA's(link state advertisements). Each router decides their own best route so convergence happens quickly. If a link goes down, convergence can happen quickly
+	
+	IS-IS:(intermediate system to intermediate system) The only other link state routing protocol. ISPs use it.
+
+	##Exterior Gateway Routing Protocol: Protocols that work between AS's
+		Theres only one: BGP
+
+		BGP: Border gateway protocol: a path vector protocol that connects AS's by working with edge routers: routers that are used to connect and AS to another. 
+	

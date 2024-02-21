@@ -1,0 +1,31 @@
+#Layer 1 -Hub: single collision: ports are non segmented
+	horizontal only
+#Layer 2 -Switch: multiple collision: ports are segmented
+	heirarchical
+
+#Layer 3 -Routers: also called a layer 3 switch. A switch by nature but connects networks,(domains): interdomain connections. doesn't do internal. They memorize IP addresses (logical address) unlike MAC addresses with a switch
+
+	Each domain has its own router. And each has at least one for internal and external.
+
+	If machines want to talk to eachother and they are internetwork they don't leave the network. Router is not used. 
+	Routing table: routers hace a small database that colledc the addressis in its Domain. 
+	Routers have cpu, ram and hd
+Default gateway IP is the same as router, usually networkid.1
+
+127.0.0.1: loopback test
+Metric: measure the "cost" of navigating through a network.
+Bay: a slot in a router machine where extension cards can make the router serve different purposes.
+
+Class A 1-126 1 block
+Class B 128-191 2 block
+Class C 192-223 3 block
+NAT: network address translation used to distinguish between public and private IP addresses. Uses a NAT forwarding table.
+
+PAT: Port address translation
+Well known port numbers: 0-1023
+Registered port numbers: 1024-49151
+Dynamic ports: 49152-65535
+
+Static routing: non changing routes
+dynamic routing: 
+

@@ -1,0 +1,39 @@
+## Domain Name System
+	Port: UDP 53 (sometimes TCP 53)
+	# DNS servers (resolvers): query name servers to get an associated IP address.
+	# Name servers: use ZONES to hold name and IP DNS records
+	
+	#13 ROOTS: The most authoratative DNS servers are the 13 root servers around the world. *Each of these root servers are actually clusters of servers that form that root* The only job of the root servers is to delegate name resolution to specific DNS systems
+	#Top level domains (.com, .org etc): The authorities for specific tlds (top level domains) it is managed by ICANN (internet corporation for assigned names and numbers)
+	#Heirarchy and FQDN: The heirarchy of a domain is very similar to local folders on a pc. A root folder holds subfolders, subfolders, etc and then a host name. When a hostname and every folder it belongs to all the way to the root are in order, the name is called an FQDN (fully qualified Domain name) unlike the name of a local machine, the hostname is resolved from right to left. 
+
+	##Name server
+		1. Record: attaches data such as an IP address to a name in a DNS tree.
+		2. Zone: A container for the collection of records that pertain to a certain domain
+		3. Name server: the software that responds to queries about DNS zones
+
+		#For small networks name servers can be authoratative for multiple zones
+		#Large networks: Larger networks have an authoratative server with smaller servers that are under that servers authority. $ How do they talk to eachother? $ By zone transfer. The primary server has a value called a serial field. The secondary servers check this and if it is higher than theirs they need to request a zone transfer to get the missing data. 
+	#Lookup zones: reverse and forward: forward is just another name for DNS main job. It looks up names and translates them to IP. Reverse does the opposite. Some low level functions like mail use it. (Reverse DNS is anothe name for reverse lookup)	
+
+	##DNS record types:
+		# SOA: Start of authority: defines the primary name server in charge of the zone
+		# NS: name server: points the resolvers (DNS) to the authoritative name servers
+		# A record: holds IPv4 addresses
+		# AAAA records: hold IPv6 records
+		# CNAME record: Canonical Name: acts like an alias, holds a FQDN not IP
+		# PTR: Pointer record: used for reverse lookup
+		# MX: Email Exchange: SMTP servers use this to determine where to send mail
+		# SRV:
+
+
+
+
+
+		ELI5: Networking is so vast that alot of tasks can be delegated by being split up. for example a large DNS server is actually a cluster of computers. An authoritative one and subserviant ones. Another example. DNS root servers, there are 13 root servers around the world that make up the backbone of the internet, but in actuality there are 13 clusters of servers that make up that root. On the other side of the coin, routing, switching, DNS and DHCP can all be handled by a single home router since the network is so small. Or a single server can handle multiple domain zones. 
+		There are two parts of DNS, the resolver and name server. 
+		Since there are so many IP addresses and you don't want to clog up servers with constant queries, DNS is segmented. For example computers use DNS, they keep records of frequently visited FQDNs in a table on their system. This is called DNS caching. This way a site that is visited often doesn't always need to be looked up. Note that a computers local DNS is not authoritative and cannot be queried like a server. If a computer does not have a name, it queries the authoritative DNS. That DNS will also have a list of Frequently queried FQDNs. If so it send it. Or it might have a part of that FQDN or know the authoritative server that does. In that case it goes up the line of authority and that happens until a FQDN is completed and sent to the computer. This is called recursive lookup.
+		Note: DNS servers can be internal or external. This is pretty simple and internal DNS is inside a LAN and is not authoritative outside of it. An external one is authoritative for the internet. 
+		TTL: time to live when it pertains to DNS caching is how long a name will stay in cache. Shorter times will mean faster DNS record updates but longer will mean easier lookup if things go wrong with the server.
+
+	

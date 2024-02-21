@@ -1,0 +1,21 @@
+## Routers and layer 3
+	--Layer1 - hub, layer2 - switch, layer3 - router
+
+#Routing tables
+	Every router has a routing table which is used for proper routing. They conataine the following fields:
+	Destination: The network ID of where the packet is going
+	Gateway: Destination for the packet, if the packet needs to go to another router its ip is placed here. If it needs to go somehwere directly connected to the router it is displayed 0.0.0.0 or on-link
+	netmask or genmask: The subnet used to define a network id. Remember A: 255.0.0.0, b: 255.255.0.0, C:255.255.255.0 and a subnet mask of 255.255.255.255 is an individual host. 0.0.0.0 is used in desination and netmask as a default: you want all traffic to default to the router
+	flags: describes destinations: u for up and working status ir h for a host, g for gateway
+	metric: weight of routes to be taken. lower the metric the more efficient
+	type, iface: info about ports, what to use and what type
+	!! remember that 0 in an ip address means anything much like * in commands
+	!! The default gateway is the default, (named in destination as deafult or 0.0.0.0) meaning packets will use this gateway unless another line on the routing table fits its destination
+	!! every node has a routing table. Not just routers
+
+
+#NAT
+	--PAT: port address translation: a form of NAT that handles one to many communication. Blocks of private IP addresses are handed out. They use port numbers. 
+	--When a private IP wants to send a packet out onto the internet it uses a port number to identify itself. The router uses that port to translate its private IP into a the real one using that NAT table.
+	Dynamic NAT: Shares a pool of IP addresses. There might be more machines than there are IPS. 
+	static NAT: The IP address and the port stays the same
