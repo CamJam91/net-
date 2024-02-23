@@ -1,0 +1,47 @@
+# layers 1: physical: wires, cabling, radiowaves, hub and switch
+	PDU (protocol data unit): bits of info that are physically transfered ie: electricity, light, radiowaves
+	#NIC: the network interface card operates ath this level as well as level 2
+	MAC address has 6 hex fields, 3 OUI and 3 device ID
+	IEEE (institure for elictrical and electronics engineers) maintain blocks of OUI's
+	ipconfig /all: windows command to see physical (MAC) address
+	ip a: linux command to see link/ether (MAC) address
+
+# Layer 2: Data link layer
+	PDU: Frames
+	Layer 1 & 2 functions tend to blur together
+
+
+	# Frames: 
+	Ethernet frames consist of sender and reciever MAC address, type of data, the data nad a frame check sequence (there are more parts)
+	The FCS uses a mathematical formula called cyclic redundancy check
+	Frames are visualized by having 3 sections, the header (MAc addresses), payload (the actual data) and tailer (FCD)
+
+	# Hub: a dumb device it repeats a frame it recieves out every port except the one it recieved from
+	# switch: the device that replaced the hub, also called a smart hub. It is capable of discrening which port a frame needs to go 
+	*hubs & switches do not have cpus, they are not computers
+	# Broadcast: NICs send a broadcast address to see every Mac address in their network. This is FF-FF-FF-FF-FF-FF: this works at layer 2. Every NIC on the network will process that frame
+	# NIC sublayers: the NIC has 2 sublayers: MAC as stated before creates and addresses the frames and LLC (logical link control) which is when the NIC interacts with the systems OS
+
+#layer 3: Network layer: Routers, Internet Protocol, how networks communicate
+	PDU: packets
+	layer 2 tech does not work well with larger networks so we divide these networks into subnets and impliment network protocol software. Examples of this software are tcp and ip
+	#logical address: At layer 3 we work with subnets. Physical addresses are left to layer 2. For this layer we need logical addresses, or IP addresses. 
+	Router: Routers work with IP addresses to connect these subnets. It ignores physical addresses.
+	Packet: When a piece of data leaves the NIC it will encapsulated in a frame. This is the bottom layer and although its called layer 1, it is the last layer before data is sent (it is also the first layer when data is recieved, its all perspective). Before layer 1 encapsulates the data it is encapsulated in a packet according to the Internet protocol. So whats really being encapsulated in that fram is a packet that holds the actual data. 
+	Frame transfer: When a frame leaves the NIC it will go through a router and maybe different types of technology. The IP packet will still encapsulate the data but the frame might be stripped by the router. This is because the frame type needs to change according to where it is being sent. But until the IP pakcet reaches the receivers NIC it will be unchanged. 
+	Routers and MAC addresses. While routers mainly work with IP addresses they can encapsulate apacket within a frame to send it to the appropriate place. Once the receiving NIC gets the frame it strips it away and send the packet through. 
+
+# Layer 4: network layer, segmentation and reassembly, TCP, UDP
+	PDU: Packet
+	# Segmentation and reassembly: The transport protocol (TCP) segments datat into chunks for seding or reassembles them for receiving. This is also where packets are checked and any missing chunks will need to be re-received.
+	# TCP segment: The packet has many different fields and containers. Another is the TCP segment. These segments are: source port, destination port, sequence number, ack number. These ensure the data goes to the proper port in the proper sequence and everything is there.
+	# UDP: user datagram protocol: if the data is using the UDP protocol its packet will have just a source port and destination port, the length and checksu to check the data. No sequence or ack or way to resend the data like TCP
+
+# layer 5: Session: netstat and handling different applications
+	The session layer is like the administrator of networking. There are so many conectiosn being made that they need to be sent to the correct place. 
+
+# Layer 6 presentation layer: Data conversion, encryption
+	This layer translates data from the lower levels into a readable form. Encryption may happen here
+
+# layer 7 Applications: API's, end user
+	Apis are the tools that programs use to function

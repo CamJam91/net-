@@ -1,0 +1,43 @@
+	## TCP/IP ands security
+	#Authorization (what a user can do)
+# NAC (network access control): a broad term of software applications whos job it is to take seperate security features and combine them into one program. They create policies for users on a network
+
+# ACL (access control list): *AUTHORIZATION*: List of permissions that a user may perform This is a broad security idea that details how one might go about authorization: There are 3 types
+	# MAC (mandatory access control): Every resource is assigned a label that defines its security, a user needs that level to use that resource (Not very popular)
+	#DAC (discretionary access control): A resource has an owner and they decide who gets access based on their discretion
+	# RBAC (Role-based access control): Users have roles and whether they ger access to a resource is based on if they have the appropriate role. ie: Liux uses owner, group, other. (This is the most popular) 
+
+	#Athentication (A user is who they say they are)
+
+# PPP (Point to point protocol): Enables two devices to connect to eachother and negotiate what network protocol they will use (usually TCP)
+	#PAP How does PPP AUTHENTICATE users? originally it used PAP (Password authenticatino protocol) which simply transmitted passwords over cleartext (not very safe)
+	#CHAP (challenge handshake authentication protocol): CHAP doesn't send passwords over networks. They compare hashes based on a shared pass or phrase and they authenticate periodically to ensure continued safety
+	#MS-CHAPv2: The current version of CHAP that dial-up users still use
+	#AAA (Authentication, Authorization, Accounting): PPP does point to point connections well but transmits over cleartext. Which is why there are so many solutions to secure it. PPP started using databases to hold authentication information and AAA is a way to secure it. There are 3 parts:
+	Authentication: User and Pass, security token, etc
+	Authorization: rules are set for user
+	Accounting: the server logs events, like logins and user actions
+
+	There are two standards for AAA: RADIUS and TACACS+
+
+	#RADIUS: Remote authentication dial-in  user service: Originally designed for dialup but works with many types of networks. It was created to support ISPs using many modems to connect to a single database
+	RADIUS consists of 3 devices:
+		RADIUS server: this has access to usersnames, passwords
+		NAS: network access servers control modems or wireless access points
+		Users: systems that connect  to the network
+	RADISU servers: 
+	IAS (internet authenticatino service): built in with windows server OS's
+	FreeRADIUS: used by unix/linux
+
+	#TACACS+ (Terminal Acces Controller Access Control System Plus (TACACS+): TCP port 49 Ciscos AAA solution to support it in a network with many routers and switches. Similar to RADIUS, uses PAP, CHAP, and MD5 and also kerberos
+
+	#Kerberos: uses TCP or UDP port 88 Kerberos does not function by peer to peer, its is a TCP authentication protocol that involves connecting to a sngle server. Microsoft Windows uses kerberos
+	# Domain: in windows a domain is a group of computers that connec tto a single windows server computer called a domain controller or DC. This DC store pass hashes in active directory and uses kerberos for authentication
+	KDC (key distribution center): supplies both session tickets and session keys in an active directory domain. The KDC is installed on the domain controller
+	AS: authentication server: the client logs onto the domain and sends a request to the AS. The AS compared the has receieved to its own and if it mathces sends TGT (ticket granting ticket) and a timestamp. The TGT is sent to a TGS (ticket granting service) which send a timestamped service ticket to the user, this ticket contains the SID (secure identifier) for the user and the group
+	SSO: single sign on; the user gets access to other features of that system withou thaving to log in again
+	Since kerberos uses a single database for authentication it is very important to have backups of it. 
+
+	SSH: TCP port 22: the secure protocol for telnet
+	In SSH the server sends its public key to the client. And the client uses this to encrypt a session id that is sent to the server. The server uses its private key to decrypt this session id and now only these two know the id. They then use this id to connect
+	SSH tunneling: Allows network traffic to flow into port 22 but be delivered to other ports

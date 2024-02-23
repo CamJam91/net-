@@ -1,0 +1,21 @@
+##DNS: Domain name system
+
+1. Converet user friendly names to their associated IP (forward)
+
+2. Convert a known IP address to its associated user friendly name (reverse)
+
+DNS can update IP addresses automatically and dynamically
+
+Flat namespace: peer to peer (hosts are equal to eachother) These have size limitations: hostfiles use these
+
+Most systems are heirarchical
+
+first computer in a system must be a server
+	-Primary domain controller (PDC): Now called Domain controller
+	#Start of Authority (SOA): 
+
+
+
+**WINS: windows internet naming system (deprecated)
+
+
